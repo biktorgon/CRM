@@ -12,9 +12,6 @@ mongoose.connect(keys.mongoURI,{ useNewUrlParser: true })
     .catch(error => console.log(error));
 
 
-app.use(passport.initialize());
-require('./middleware/passport')(passport);
-
 app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json({limit: '1mb'}));
