@@ -11,6 +11,8 @@ mongoose.connect(keys.mongoURI,{ useNewUrlParser: true })
     .then(() => console.log('MongoDB connected'))
     .catch(error => console.log(error));
 
+app.use(passport.initialize());
+require('./middleware/passport')(passport);
 
 app.use(cors());
 app.use(logger('dev'));
