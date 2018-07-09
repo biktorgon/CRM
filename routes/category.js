@@ -4,6 +4,7 @@ const router = express.Router();
 const controller = require('../controllers/category');
 
 router.get('/', passport.authenticate('jwt', {session: false}),controller.getAll);
+//router.get('/', controller.getAll);
 router.get('/:id', controller.getById);
 router.delete('/:id', controller.remove);
 router.post('/', controller.create);
