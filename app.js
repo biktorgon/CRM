@@ -16,6 +16,7 @@ require('./middleware/passport')(passport);
 
 app.use(cors());
 app.use(logger('dev'));
+app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.json({limit: '1mb'}));
 app.use(bodyParser.urlencoded({extend: true}));
 
